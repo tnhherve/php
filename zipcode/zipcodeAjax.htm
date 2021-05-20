@@ -1,0 +1,86 @@
+﻿<!--
+        auteur :Joel Boudreau
+        date : 2021
+       
+-->
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Zipcode city state Ajax</title>
+
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+            
+                function getStateCity(){
+                    
+                    var zip = $("#zip").val();
+                     console.log(zip);
+                    var xhr = new XMLHttpRequest();
+                    
+                    xhr.open("GET", "getCityState.php?zipcode="+zip, true);
+                    xhr.onreadystatechange = function(){
+                        if (xhr.readyState == 4){
+                            console.log(JSON.parse(xhr.responseText));
+                            var obj = JSON.parse(xhr.responseText);
+                            
+                            $("#city").val(obj.city);
+                            $("#state").val(obj.state);
+
+                        }
+                    }
+                    
+                    xhr.send(null);
+                }
+             
+             
+        </script>
+        <style type="text/css">
+            fieldset {
+                border: 1px solid #781351;
+                width: 20em
+            }
+
+            legend {
+                color: #fff;
+                background: #ffa20c;
+                border: 1px solid #781351;
+                padding: 2px 6px
+            }
+
+            body {
+                margin: 50px;
+                font-size : 24pt;
+            }
+            label {
+                font-weight: bold;
+            }
+            input {
+                font-size : 22pt;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Zipcode avec Ajax</h1>
+        <fieldset>
+            <legend>Entrer un zipcode</legend>
+            <form>
+                <p>
+                    <label>Zipcode:
+                        <input type="text" size="5" name="zip" id="zip" onblur="getStateCity()"/></label>
+                </p>
+                <label>City:
+                    <input type="text" name="city" id="city"/></label>
+                <label>State:
+                    <input type="text" size="2" name="state" id="state"/></label>
+            </form>
+        </fieldset>
+
+    </body>
+
+</html>

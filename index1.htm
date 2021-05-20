@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+        auteur :Joel Boudreau
+        date : 2021
+       
+-->
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>GET et POST</title>
+        <style type="text/css">
+            body {
+                font-size : 18pt;
+                margin : 50px;
+            }
+
+            input {
+                font-size : 18pt;
+            }
+
+            input[type=submit] {
+                background-color: greenyellow;
+            }
+        </style>
+    </head> 
+    <body> 
+        <form action="traitement.php" method="get">
+            <label>Nom :<br />
+                <input type="text"  name="txtNom" /></label><br />
+            <label>Courriel :<br />
+                <input type="text" name="txtCourriel"  /></label><br /><br />
+            <input type="submit" value="Envoyer" />
+        </form> 
+
+    </body> 
+</html>

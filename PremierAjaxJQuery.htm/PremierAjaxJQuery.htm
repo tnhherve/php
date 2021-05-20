@@ -1,0 +1,75 @@
+<!-- 
+        auteur : Joel Boudreau
+        date :  2021
+                
+        but :
+-->
+<!doctype html>
+<html lang="en">
+    <head>
+        <title id="titre">Premier Ajax</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#loadingImg").hide(); //on cache le gif animé au départ
+
+                $("#btnClick").click(function () {
+                    var xhr = new XMLHttpRequest();
+
+                    xhr.open("GET", "getDate.php", true);
+
+                    xhr.onreadystatechange = function () {
+                       
+                        if (xhr.readyState === 4 ) {
+                           //alert(xhr.responseText);
+                            //placer le responseText dans le paragraphe.
+                            //faire un animation
+                            //faire afficher le gif pour 2-3 secondes
+                            
+                            $("#loadingImg").show().delay(1000).hide('slow');
+                            //$("#target").hide();
+                            //$("#target").html(xhr.responseText);
+                            //$("#target").slideDown();
+                            $("#target").hide().html(xhr.responseText).slideDown();
+                            
+                            document.title = xhr.responseText;
+                            //$("#titre").text(xhr.responseText);
+                            
+                        }
+                    };
+
+
+                    xhr.send(null);  //déclenche l'appel;
+
+                });
+
+            });
+
+        </script>
+
+        <style type="text/css">
+            body {
+                margin : 25px;
+            }
+
+            #btnClick {
+                margin : 15px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Premier Ajax</h1>
+        <form>
+            <input type="button" class="btn btn-danger" id="btnClick" value="click me!" /><img src="load.gif" alt="load" id="loadingImg"/>
+        </form>
+        <p id="target">Ceci est du texte</p>
+    </body>
+</html>

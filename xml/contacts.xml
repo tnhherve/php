@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="contacts.xsd">
+	<contact id="contact1">
+		<prénom>Achille</prénom>
+		<nom>Talon</nom>
+		<compagnie>Dargaud inc.</compagnie>
+		<téléphone>514 888-9090</téléphone>
+		<télécopieur>999-9999</télécopieur>
+		<courriel>toto@toto.com</courriel>
+	</contact>
+	<contact id="contact2">
+		<prénom>Gaston</prénom>
+		<nom>Lagaffe</nom>
+		<compagnie>Franklin</compagnie>
+		<téléphone>777-7777</téléphone>
+		<télécopieur>666-6666</télécopieur>
+		<courriel>gaston@lagaffe.com</courriel>
+	</contact>
+	<contact id="contact3">
+		<prénom>Fred</prénom>
+		<nom>Caillou</nom>
+		<compagnie>Les Pierrafeu Enrg.</compagnie>
+		<téléphone>222-2222</téléphone>
+		<télécopieur>333-3333</télécopieur>
+	</contact>
+	<contact id="contact4">
+		<prénom>Bob</prénom>
+		<nom>Morane</nom>
+		<compagnie>Amazone.com</compagnie>
+		<téléphone>101-0101</téléphone>
+		<télécopieur>010-1010</télécopieur>
+	</contact>
+</contacts>

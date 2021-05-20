@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<!--
+        auteur :Joel Boudreau
+        date : 2021
+       
+-->
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Joel Pièces d'Auto</title> 
+        <style type="text/css">
+
+            tr#first 
+            {	
+                background-color : darkolivegreen ;
+
+            }
+            tr#first td 
+            {
+                border : 1px solid black;
+            }
+            input[type=text] 
+            {
+                border : 1px solid black;
+                height: 20px;
+
+            }
+
+            input[type=submit]
+            {
+                font-size : 16pt;
+            }
+            td 
+            {
+                padding : 5px;
+            }
+
+            table 
+            {
+
+                margin-left: auto;
+                margin-right: auto;
+                font-size : 18pt;
+                font-family : Arial;
+            }
+            #buttonCell 
+            {
+                text-align : center;
+            }
+
+            h1 
+            {
+                text-align : center;
+
+            }	
+
+            body 
+            {
+                background-color : silver;
+            }
+        </style>
+    </head> 
+    <body> 
+
+
+        <h1>Joel Pièces d'auto</h1>
+        <hr />
+        <br />
+        <form action="produitCommande.php" method="post"> 
+
+            <table border="0">
+                <tr id="first">
+                    <td width="150">Item</td>
+                    <td width="15">Quantité</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="txtPneux">Pneux</label>
+                    </td>
+                    <td>
+                        <input id="txtPneux" name="txtPneux"   type="text"  value=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="txtHuile">Huile</label> 
+                    </td>
+                    <td>
+                        <input id="txtHuile" name="txtHuile"  type="text" maxlength="255" value=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="txtBougies">Bougies </label> 
+                    </td>
+                    <td>
+                        <input id="txtBougies" name="txtBougies"  type="text" maxlength="255" value=""/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="buttonCell">
+                        <input id="saveForm" type="submit" name="Submit" value="Envoyer la commande" />
+                    </td>
+                </tr>
+            </table>
+
+        </form>	
+
+        <br />
+        <hr />
+    </body> 
+</html>

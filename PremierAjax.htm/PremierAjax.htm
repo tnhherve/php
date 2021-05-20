@@ -1,0 +1,43 @@
+<!-- 
+        auteur : Joel Boudreau
+        date :  2021
+        but :
+-->
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <title>Template</title>
+
+        <script type="text/javascript">
+            function afficherAjax() {
+                var xhr = new XMLHttpRequest();
+
+                xhr.open("GET", "info.txt", true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4){
+                        //alert(xhr.responseText);
+                        document.getElementById("target").innerHTML = xhr.responseText;
+                    }
+                };
+
+                xhr.send(null);  //déclenche l'appel;
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Premier Ajax</h1>
+        <p id="target">Ceci est du texte</p>
+
+        <form>
+            <div>
+                <input type="button" id="btnClick" value="click me!" onclick="afficherAjax();" />
+            </div>
+        </form>
+
+    </body>
+</html>
